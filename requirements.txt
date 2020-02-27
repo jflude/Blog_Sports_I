@@ -92,7 +92,7 @@ traitlets==4.3.2
 uber-rides==0.6.0
 ujson==1.35
 uritemplate==3.0.0
-urllib3==1.23
+urllib3==1.24.2
 v20==3.0.25.0
 vine==1.2.0
 virtualenv==16.0.0
