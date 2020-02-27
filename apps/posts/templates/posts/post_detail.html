@@ -1,0 +1,26 @@
+{% extends 'posts/base.html' %}
+
+	{% block content %}
+	<div class = "page-header">
+		<center>
+		<h1>The Sports Blog -- "Beat Your Bookie.Com"</h1>
+		</center
+		</div>
+		<div class = "container" >
+			{% if object is not None %}
+				<h3>{{ object.title }}</h3>
+					<ul>
+						<li>{{ object.author }}</li>
+						<li>{{ object.created_on }}</li>
+					</ul><br>
+						<center>
+							<p>	{{ object.content }}</p>
+						</center>
+
+				{% else %}
+					<center><h2>In order to read posts, please upgrade your membership!</h2></center>
+
+			{% endif %}
+
+		{% endblock content %}
+		</div>

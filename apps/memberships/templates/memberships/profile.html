@@ -1,0 +1,35 @@
+{% extends 'posts/base.html' %}
+
+
+{% block content %}
+	<div class="container">
+		<div class="row">
+			<div class = "header col-sm-4 col-md-4">
+			<h1>My Profile </h1>
+			</div>
+			<div class = "header col-sm-6 col-md-6">
+				<center>
+						<h1>Pick of the Day!</h1>
+				</center>
+			</div>
+		<div class="col-sm-4 col-md-4">
+			{% if user_subscription != None %}
+			<h4>Current Membership: {{ user_membership.membership.membership_type }} <medium> Member since {{ user_subscription.get_created_date }}</medium></h4>
+				<h4>Next payment due:{{ user_subscription.get_next_billing_date }}</h4>
+				<a href="{% url 'memberships:cancel' %}">Cancel subscription</a>
+				<a href="{% url 'memberships:select' %}"><mark>Upgrade Membership</mark></a>
+
+			{% else %}
+			<p>You don't have an active membership plan. Check them out here:
+				<a href="{% url 'memberships:select' %}">Select Membership</a>
+			</p>
+				{% endif %}
+			</div>
+			<div class = "col-sm-6 col-md-6">
+				<center>
+				<h4>{{ daily_pick_content.object.content }}</h4>
+				</center>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

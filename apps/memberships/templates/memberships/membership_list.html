@@ -1,0 +1,31 @@
+{% extends 'posts/base.html' %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'posts/style.css' %}">
+
+  {% block content %}
+  <div class = 'container' >
+    <h1>Select a Membership:</h1><br><br><br>
+
+      <div class = "row">
+        {% for object in object_list %}
+
+          <div class = "col-sm-3 col-md-3">
+            <div class="panel panel-default">
+              <div class="panel-body">
+              <h2>{{ object.membership_type }}</h2>
+              <h3>{{ object.description}}</h3>
+              <p>Price: ${{ object.price }}</p>
+
+                <form method = "POST" action = "{% url "memberships:select" %}">
+                  {% csrf_token %}
+			             <button class="btn btn-warning">Select</button>
+                    <input type = "hidden" name = "membership_type" value = "{{ object.membership_type }}">
+                </form>
+              </div>
+              </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+{% endblock content %}

@@ -1,0 +1,7 @@
+{% extends 'posts/base.html' %}
+
+{% block content %}
+  {% if object is not None %}
+    {{ object.content }}
+  {% endif %}
+{% endblock content %}

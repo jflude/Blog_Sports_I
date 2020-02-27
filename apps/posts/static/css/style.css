@@ -1,0 +1,8 @@
+.border-primary {
+    border: 1px solid #007bff;
+}
+
+p {
+  font-family: "helvetica neue", arial, verdana, sans-serif;
+  font-style: 24px;
+}
