@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django_cron',
     'django_crontab',
     'django_celery_beat',
+    'chroniker',
     'crispy_forms',
 
     'allauth',
@@ -165,7 +166,7 @@ if DEBUG:
 
 else:
     # live keys
-    STRIPE_PUBLISHABLE_KEY = os.getenv("STRIPE_SECRET_KEY")
+    STRIPE_PUBLISHABLE_KEY = os.getenv("STRIPE_PUBLISHABLE_KEY")
     STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
 
 LOGIN_REDIRECT_URL = '/memberships/profile'

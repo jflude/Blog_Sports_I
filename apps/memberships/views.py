@@ -12,7 +12,9 @@ from datetime import datetime
 import stripe
 from django.contrib import auth
 from django.contrib.auth.models import User
-
+from dotenv import load_dotenv
+...
+load_dotenv()
 
 def get_user_membership(request):
     user_membership_qs = UserMembership.objects.filter(user = request.user)
