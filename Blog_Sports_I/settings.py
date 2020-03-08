@@ -170,3 +170,22 @@ else:
     STRIPE_SECRET_KEY = os.getenv("STRIPE_SECRET_KEY")
 
 LOGIN_REDIRECT_URL = '/memberships/profile'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
