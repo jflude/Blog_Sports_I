@@ -4,4 +4,4 @@ RUN apt-get update && apt-get install
 RUN cd /app && pip install -r requirements.txt
 WORKDIR /app
 EXPOSE 8000
-CMD exec python manage.py runserver
+CMD exec scripts/run-docker.sh
